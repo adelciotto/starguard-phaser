@@ -39,7 +39,7 @@ export function start(dirname) {
         };
     }
 
-    storage = new Storage(app, options);
+    //storage = new Storage(app, options);
     app.set('log', log);
     app.set('storage', storage);
 
