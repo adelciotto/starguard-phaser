@@ -31,7 +31,12 @@ export function start(dirname) {
         options = { host: 'localhost', user: 'root', pass: '' };
         app.use(errorHandler());
     } else if (NodeEnv === 'production') {
-        // TODO: set db connection options for prod env
+        options = {
+            host: process.env.RDS_HOSTNAME,
+            user: process.env.RDS_USERNAME,
+            pass: process.env.RDS_PASSWORD,
+            port: process.env.RDS_PORT
+        };
     }
 
     storage = new Storage(app, options);
@@ -44,13 +49,13 @@ export function start(dirname) {
 function initRoutes(dirname) {
     app.get('/', routes.index);
     app.get('/leaderboard', leaderboard.index);
-    app.use(express.static(path.join(dirname, '/dist')));
+    //app.use(express.static(path.join(dirname, '/dist')));
 
     listen();
 }
 
 function listen() {
-    var port = process.env.PORT || 8080;
+    var port = 8081;
 
     app.listen(port, f => {
         log.info('express server listening on port: %d', port);

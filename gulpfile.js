@@ -22,13 +22,17 @@ files.forEach(function(file) {
 });
 
 gulp.task('build', function(cb) {
+    runSequence('clean', ['copy', 'assets'], ['jshint', 'scripts'], cb);
+});
+
+gulp.task('start', function(cb) {
     runSequence('clean', ['copy', 'assets'], ['jshint', 'scripts'],
         'serve', cb);
 });
 
-gulp.task('build:dev', function(cb) {
+gulp.task('start:dev', function(cb) {
     runSequence(['copy', 'assets'], ['jshint', 'scripts:watch'],
         'serve:watch', cb);
 });
 
-gulp.task('default', ['build:dev']);
+gulp.task('default', ['start:dev']);
