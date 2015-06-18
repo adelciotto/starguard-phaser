@@ -6,8 +6,6 @@
  * ===========================================================================
  */
 
-var routes = require('./routes');
-
 import express from 'express';
 import Storage from './storage/storage';
 import errorHandler from 'errorhandler';
@@ -39,7 +37,7 @@ export function start(dirname) {
         };
     }
 
-    //storage = new Storage(app, options);
+    storage = new Storage(app, options);
     app.set('log', log);
     app.set('storage', storage);
 
@@ -47,7 +45,6 @@ export function start(dirname) {
 }
 
 function initRoutes(dirname) {
-    app.get('/', routes.index);
     app.get('/leaderboard', leaderboard.index);
     //app.use(express.static(path.join(dirname, '/dist')));
 
@@ -55,7 +52,7 @@ function initRoutes(dirname) {
 }
 
 function listen() {
-    var port = 8081;
+    var port = process.env.PORT || 8081;
 
     app.listen(port, f => {
         log.info('express server listening on port: %d', port);

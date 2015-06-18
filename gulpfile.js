@@ -26,8 +26,7 @@ gulp.task('build', function(cb) {
 });
 
 gulp.task('start', function(cb) {
-    runSequence('clean', ['copy', 'assets'], ['jshint', 'scripts'],
-        'serve', cb);
+    runSequence('build', 'serve', cb);
 });
 
 gulp.task('start:dev', function(cb) {
