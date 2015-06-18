@@ -1,0 +1,64 @@
+{
+  "name": "starguard-phaser",
+  "private": true,
+  "version": "0.0.1",
+  "description": "starguard clone that runs in the cloud. Built using the Phaser game library.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adelciotto/starguard-phaser"
+  },
+  "keywords": [
+    "pixi.js",
+    "game",
+    "multiplayer",
+    "socket.io"
+  ],
+  "author": "Anthony Del Ciotto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adelciotto/starguard-phaser/issues"
+  },
+  "homepage": "https://github.com/adelciotto/starguard-phaser",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-if": "^1.2.5",
+    "gulp-rename": "^1.2.0",
+    "browserify": "10.2.4",
+    "babelify": "6.1.2",
+    "watchify": "3.2.2",
+    "browser-sync": "2.7.10",
+    "browserify-ngannotate": "1.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-cached": "1.1.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.9.2",
+    "gulp-jsonmin": "^1.0.2",
+    "gulp-phaser-tiled-pack": "^1.1.0",
+    "gulp-size": "^1.2.1",
+    "gulp-sourcemaps": "^1.5.0",
+    "jshint-summary": "^0.4.0",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "dependencies": {
+    "babel": "^5.2.17",
+    "errorhandler": "^1.3.5",
+    "express": "^4.12.3",
+    "log": "^1.4.0",
+    "mysql": "^2.7.0",
+    "phaser": "^2.3.0",
+    "phaser-debug": "^1.1.6",
+    "socket.io": "^1.3.5",
+    "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
