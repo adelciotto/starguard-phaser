@@ -14,8 +14,7 @@ class Storage {
     constructor(app, options, connLimit = 100) {
         this._app = app;
         this._dbPool = mysql.createPool(_.extend(options, {
-            connectionLimit: connLimit,
-            database: 'game_data'
+            connectionLimit: connLimit
         }));
 
         this.getConnection(create, false);
@@ -37,8 +36,7 @@ class Storage {
         return new Promise((resolve, reject) => {
             this._dbPool.getConnection((err, conn) => {
                 if (err) {
-                    conn.release();
-                    reject('could not get connection from pool');
+                    reject(err);
                 }
 
                 resolve(conn);

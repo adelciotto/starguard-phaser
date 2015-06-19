@@ -30,20 +30,27 @@ function createDb(conn) {
 
 function createTables(conn) {
     return new Promise((resolve, reject) => {
-        conn.query(`
-                    CREATE TABLE IF NOT EXISTS leaderboard(
-                        id INT NOT NULL AUTO_INCREMENT,
-                        PRIMARY KEY(ID),
-                        name VARCHAR(30),
-                        score INT)
-                  `,
-        (err) => {
+        conn.query('USE game_data', (err) => {
             if (err) {
                 conn.release();
                 reject(err);
             }
 
-            resolve();
+            conn.query(`
+                        CREATE TABLE IF NOT EXISTS leaderboard(
+                            id INT NOT NULL AUTO_INCREMENT,
+                            PRIMARY KEY(ID),
+                            name VARCHAR(30),
+                            score INT)
+                      `,
+            (err) => {
+                if (err) {
+                    conn.release();
+                    reject(err);
+                }
+
+                resolve();
+            });
         });
     });
 }

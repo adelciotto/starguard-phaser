@@ -34,12 +34,12 @@ export function start(dirname) {
         options = {
             host: process.env.RDS_HOSTNAME,
             user: process.env.RDS_USERNAME,
-            pass: process.env.RDS_PASSWORD,
+            password: process.env.RDS_PASSWORD,
             port: process.env.RDS_PORT
         };
     }
 
-    //storage = new Storage(app, options);
+    storage = new Storage(app, options);
     app.set('log', log);
     app.set('storage', storage);
 
