@@ -27,7 +27,6 @@ class Game extends Phaser.Game {
         this.state.add('splash', SplashState, false);
         this.state.add('mainmenu', MenuState, false);
         this.state.add('play', PlayState, false);
-        console.log(worlds);
         this._addWorlds(worlds);
 
         return this;

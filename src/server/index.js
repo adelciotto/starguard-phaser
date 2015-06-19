@@ -6,6 +6,8 @@
  * ===========================================================================
  */
 
+var routes = require('./routes');
+
 import express from 'express';
 import Storage from './storage/storage';
 import errorHandler from 'errorhandler';
@@ -45,9 +47,13 @@ export function start(dirname) {
 }
 
 function initRoutes(dirname) {
-    app.get('/leaderboard', leaderboard.index);
-    //app.use(express.static(path.join(dirname, '/dist')));
+    if (NodeEnv === 'development') {
+        app.use(express.static(dirname));
+    } else if (NodeEnv === 'production') {
+        app.get('/', routes.index);
+    }
 
+    app.get('/leaderboard', leaderboard.index);
     listen();
 }
 
