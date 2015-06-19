@@ -19,8 +19,8 @@ class MainMenuDialog extends Dialog {
         super.setup([
             { type: 'button', pos: 'center', text: 'Start',
                 newLine: true, fn: this._onStartSelected, ctx: this },
-            { type: 'button', pos: 'center', text: 'Trial',
-                newLine: true, fn: this._onTrialSelected, ctx: this },
+            { type: 'button', pos: 'center', text: 'Leaderboard',
+                newLine: true, fn: this._onLeaderboardSelected, ctx: this },
             { type: 'button', pos: 'center', text: 'Options',
                 newLine: true, fn: this._onOptionsSelected, ctx: this }
         ]);
@@ -30,8 +30,8 @@ class MainMenuDialog extends Dialog {
         this._parent.state.start('play');
     }
 
-    _onTrialSelected() {
-
+    _onLeaderboardSelected() {
+        this._parent.state.start('leaderboard');
     }
 
     _onOptionsSelected() {

@@ -26,7 +26,7 @@ class OptionsDialog extends Dialog {
         ];
 
         if (returnToMenu) {
-            items.push({ type: 'button', pos: 'center', text: 'Main0-Menu',
+            items.push({ type: 'button', pos: 'center', text: 'MainMenu',
                 fn: this._onMainMenu, ctx: this, newLine: true });
         }
 

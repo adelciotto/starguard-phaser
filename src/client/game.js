@@ -12,6 +12,7 @@ import BootState from 'client/states/boot';
 import PreloadState from 'client/states/preload';
 import SplashState from 'client/states/splash';
 import MenuState from 'client/states/menu';
+import LeaderboardState from 'client/states/leaderboard';
 import PlayState from 'client/states/play';
 
 class Game extends Phaser.Game {
@@ -26,6 +27,7 @@ class Game extends Phaser.Game {
         this.state.add('preload', PreloadState, false);
         this.state.add('splash', SplashState, false);
         this.state.add('mainmenu', MenuState, false);
+        this.state.add('leaderboard', LeaderboardState, false);
         this.state.add('play', PlayState, false);
         this._addWorlds(worlds);
 

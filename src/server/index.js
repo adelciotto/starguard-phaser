@@ -48,7 +48,7 @@ export function start(dirname) {
 
 function initRoutes(dirname) {
     if (NodeEnv === 'development') {
-        app.use(express.static(dirname));
+        app.use(express.static(path.join(dirname, 'dist')));
     } else if (NodeEnv === 'production') {
         app.get('/', routes.index);
     }

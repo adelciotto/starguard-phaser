@@ -27,8 +27,8 @@ class PreloadState extends State {
         this.load.spritesheet(Const.SPRITE_SHEET, 'res/img/sheet.png', 12, 12);
         this.load.spritesheet(Const.GAME_LOGO, 'res/img/logo.png', 24, 12);
         this.load.image(Const.HTML_LOGO, 'res/img/html.png');
-        this.load.bitmapFont(Const.GAME_FONT, 'res/fonts/plumber_bros.png',
-            'res/fonts/plumber_bros.xml');
+        this.load.bitmapFont(Const.GAME_FONT, 'res/fonts/font.png',
+            'res/fonts/font.xml');
 
         this.load.tilemap('testmap', 'res/tilemaps/testmap.json',
             null, Phaser.Tilemap.TILED_JSON);
