@@ -89,11 +89,19 @@ class LevelManager {
 
         // set player spawn point
         for (var obj of objLayer) {
+            let props = obj.properties;
+
             switch(obj.name) {
                 case 'spawn':
-                    let gate = new Gate(this._game, obj.x, obj.y);
+                    let gate = new Gate(this._game, obj.x, obj.y, props.width,
+                        props.height);
                     this._entitiesGroup.add(gate);
                     this._player.position.set(obj.x, obj.y);
+                    break;
+                case 'exit':
+                    let exit = new Gate(this._game, obj.x, obj.y, props.width,
+                        props.height);
+                    this._entitiesGroup.add(exit);
                     break;
             }
         }

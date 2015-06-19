@@ -9,12 +9,12 @@
 import Const from 'const';
 
 class Gate extends Phaser.Sprite {
-    constructor(game, x, y) {
+    constructor(game, x, y, blockW, blockH, callback = null) {
         super(game, x, y, game.cache.getBitmapData(Const.FILLED_RECT));
 
         this.anchor.set(0.5);
-        this.width = Const.BLOCK_SIZE * 6;
-        this.height = Const.BLOCK_SIZE * 6;
+        this.width = Const.BLOCK_SIZE * blockW;
+        this.height = Const.BLOCK_SIZE * blockH;
         this.tint = 0x0000FF;
 
         game.add.tween(this)
