@@ -5,7 +5,8 @@
   "description": "starguard clone that runs in the cloud. Built using the Phaser game library.",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",

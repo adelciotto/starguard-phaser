@@ -35,7 +35,7 @@ var bundle = function(watch) {
     var ops = { debug: true, paths: ['./src'] };
 
     if (watch) {
-        browserSync.init({ proxy: 'localhost:8080' });
+        browserSync.init({ proxy: 'localhost:8081' });
         bro = watchify(browserify('./src/client/index.js',
             _.extend(watchify.args, ops)));
         bro.on('update', function() {
